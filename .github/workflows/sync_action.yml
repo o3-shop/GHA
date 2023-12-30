@@ -2,13 +2,6 @@ name: GitlabSync
 
 on:
   workflow_call:
-    inputs:
-      sync_hosturl:
-        required: true
-        type: string
-      sync_repourl: 
-        required: true
-        type: string
     secrets:
       sync_username:
         required: true
@@ -25,6 +18,6 @@ jobs:
         fetch-depth: 0
     - uses: wangchucheng/git-repo-sync@v0.1.0
       with:
-        target-url: ${{ inputs.sync_hosturl }}${{ inputs.sync_repourl }}
+        target-url: ${{ vars.SYNC_HOSTURL }}${{ vars.SYNC_REPOURL }}
         target-username: ${{ secrets.sync_username }}
         target-token: ${{ secrets.sync_token }}

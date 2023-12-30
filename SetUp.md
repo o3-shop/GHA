@@ -24,10 +24,6 @@ on:
 jobs:
   sync:
     uses: o3-shop/GHA/.github/workflows/sync_action.yml@main
-    
-    with:
-      sync_hosturl: ${{ vars.SYNC_HOSTURL }}
-      sync_repourl: ${{ vars.SYNC_REPOURL }}
 
     secrets:
       sync_username: ${{ secrets.SYNC_USERNAME }}
