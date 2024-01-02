@@ -1,5 +1,5 @@
 # sync_action.yml
-based on https://github.com/marketplace/actions/git-repo-sync
+based on https://github.com/marketplace/actions/gitlab-sync
 
 - use a dedicated sync user in Gitlab
 - create organisation variables (`Settings -> Secrets and variables -> Actions`):
@@ -17,9 +17,7 @@ based on https://github.com/marketplace/actions/git-repo-sync
 ```
 name: GitlabSync
 
-on:
-  - push
-  - delete
+on: [push, pull_request, create, delete]
 
 jobs:
   sync:

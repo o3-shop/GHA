@@ -16,8 +16,8 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    - uses: wangchucheng/git-repo-sync@v0.1.0
+    - uses: action-pack/gitlab-sync@v3
       with:
-        target-url: ${{ vars.SYNC_HOSTURL }}${{ vars.SYNC_REPOURL }}
-        target-username: ${{ secrets.sync_username }}
-        target-token: ${{ secrets.sync_token }}
+        url: ${{ vars.SYNC_HOSTURL }}${{ vars.SYNC_REPOURL }}
+        username: ${{ secrets.sync_username }}
+        token: ${{ secrets.sync_token }}
