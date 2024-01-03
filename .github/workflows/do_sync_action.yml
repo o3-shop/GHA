@@ -1,8 +1,6 @@
 name: DoGitlabSync
 
-on:
-  - push
-  - delete
+on: [push, pull_request, create, delete]
 
 jobs:
   sync:
